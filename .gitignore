@@ -6,7 +6,7 @@ __pycache__/
 
 # Virtual environment
 env/
-venv/
+.venv/
 *.egg-info/
 
 # Jupyter Notebook checkpoints
@@ -67,4 +67,3 @@ results/
 
 # Git-related ignore files
 *.orig
-git add app/main.py app/utils.py app/__init__.py
