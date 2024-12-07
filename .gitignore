@@ -1,5 +1,70 @@
-env/
+# Byte-compiled files
+*.pyc
+*.pyo
+*.pyd
 __pycache__/
-*.ipynb_checkpoints
+
+# Virtual environment
+env/
+venv/
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Streamlit-generated files
+.streamlit/secrets.toml
+# .streamlit/config.toml
+
+# Application-generated files
+*.sqlite3
+*.db
+
+# Python environment and package files
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Test output and coverage reports
+*.cover
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# CI/CD configurations (if sensitive data is used)
+.github/secrets/
+
+# Ignore any data or output files
+data/
+data/raw/
+data/processed/
+outputs/
+results/
+
+# Ignore specific user configurations
+# .vscode/
+.idea/
+*.code-workspace
+
+# Avoid committing large files
+*.tar
+*.zip
+*.gz
+*.h5
 *.csv
-*.png
+*.xlsx
+
+# Git-related ignore files
+*.orig
+git add app/main.py app/utils.py app/__init__.py
