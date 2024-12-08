@@ -8,7 +8,6 @@ import numpy as np
 from scipy.stats import zscore
 
 
-# Convert 'Timestamp' to numeric (days since start date)
 def convert_timestamp_to_numeric(df):
     """
     Converts 'Timestamp' column to numeric (days since start date).
@@ -118,17 +117,9 @@ def generate_pair_plot(df, columns):
     """
     Generates a pair plot (scatter plot matrix) for the specified columns.
     """
-    # fig, ax = plt.subplots(figsize=(10, 8))
-    pair_plot = sns.pairplot(
-        df[columns], diag_kind="kde", corner=True
-    )  # No ax parameter
+    pair_plot = sns.pairplot(df[columns], diag_kind="kde", corner=True)
     pair_plot.fig.suptitle("Pair Plot (Scatter Plot Matrix)", y=1.02, fontsize=16)
     return pair_plot.fig
-
-    # sns.pairplot(df[columns], diag_kind="kde", corner=True)
-    # ax.set_title("Pair Plot (Scatter Plot Matrix)")
-    # # ax.show()
-    # return fig
 
 
 def scatter_plot(df, x, y, title="Scatter Plot"):
@@ -136,7 +127,6 @@ def scatter_plot(df, x, y, title="Scatter Plot"):
     Creates a scatter plot for two variables.
     """
     fig, ax = plt.subplots(figsize=(10, 8))
-    # ax.figure(figsize=(8, 6))
     sns.scatterplot(data=df, x=x, y=y, ax=ax)
     ax.set_title(title)
     ax.set_xlabel(x)
@@ -151,14 +141,13 @@ def plot_histogram(df, column, bins=20):
     Creates a histogram for a single variable.
     """
     fig, ax = plt.subplots(figsize=(8, 6))  # Set the figure size here
-    sns.histplot(
-        data=df, x=column, bins=bins, kde=True, ax=ax
-    )  # Use ax parameter for seaborn
-    ax.set_title(f"Histogram of {column}")  # Fix `set_title` method
-    ax.set_xlabel(column)  # Fix `set_xlabel` method
-    ax.set_ylabel("Frequency")  # Fix `set_ylabel` method
+    sns.histplot(data=df, x=column, bins=bins, kde=True, ax=ax)
+    # Use ax parameter for seaborn
+    ax.set_title(f"Histogram of {column}")
+    ax.set_xlabel(column)
+    ax.set_ylabel("Frequency")
     ax.grid(True)
-    fig.tight_layout()  # Apply tight layout on `fig`
+    fig.tight_layout()
     return fig
 
 

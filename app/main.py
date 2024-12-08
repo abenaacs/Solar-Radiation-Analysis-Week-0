@@ -39,8 +39,6 @@ st.set_page_config(page_title="Solar Radiation Dashboard", layout="wide")
 st.title("Solar Radiation Analysis Dashboard")
 st.write("Explore insights from solar radiation datasets across multiple regions.")
 
-# col1, col2, col3 = st.columns(3)
-
 # Dataset options
 datasets = {
     "Sierra Leone": "data/processed/sierraleone-cleaned.csv",
@@ -80,14 +78,14 @@ st.write(f"Filtered Data ({start_time} to {end_time}):")
 tab1, tab2, tab3 = st.tabs(["Overview", "Visualizations", "Raw Data"])
 
 with tab1:
-    # if st.session_state.active_tab == "Overview":
     st.write("Overview of Solar Radiation Insights")
     # Display dataset summary statistics
     st.write("#### Dataset Summary")
     st.write(
         "The dataset contains key solar radiation parameters recorded over time. Below are some basic statistics:"
     )
-    st.write(df.describe())  # Show statistical summary of numeric columns
+    st.write(df.describe())
+    # Show statistical summary of numeric columns
     st.write(f"**Total Records:** {df.shape[0]} rows")
     st.write(f"**Number of Features:** {df.shape[1]} columns")
 
@@ -113,7 +111,6 @@ with tab1:
 with tab2:
 
     st.write("visualization goes here")
-    # with col1:
     if st.button("Generate Time-Series Plot"):
         st.write("Time-Series Plot:")
         fig = create_time_series(df)
@@ -133,7 +130,6 @@ with tab2:
         st.write("Correlation Matrix (Solar Radiation and Temperature):")
         fig = generate_correlation_matrix(df, solar_temp_columns)
         st.pyplot(fig)
-    # with col2:
     # Pair Plot for Solar Radiation and Temperature
     if st.button("Generate Pair Plot (Solar & Temp)"):
         st.write("Pair Plot (Solar Radiation and Temperature):")
@@ -157,7 +153,6 @@ with tab2:
         st.write("Scatter Plot: RH vs Temperature (TModA)")
         fig = scatter_plot(df, x="RH", y="TModA", title="RH vs Temperature (TModA)")
         st.pyplot(fig)
-    # with col3:
     if st.button("RH vs Solar Radiation (GHI)"):
         st.write("Scatter Plot: RH vs Solar Radiation (GHI)")
         fig = scatter_plot(df, x="RH", y="GHI", title="RH vs Solar Radiation (GHI)")
@@ -191,7 +186,6 @@ with tab2:
         st.pyplot(fig)
 
     with tab3:
-        # if st.session_state.active_tab == "Raw Data":
         st.write("Raw Data display.")
         st.write(df)
 
