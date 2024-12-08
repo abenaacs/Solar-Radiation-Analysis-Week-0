@@ -10,6 +10,7 @@ from visualization import (
     scatter_plot,
     plot_histogram,
     bubble_chart,
+    display_summary,
 )
 
 # Load the dataset
@@ -66,7 +67,7 @@ for dataset in datasets:
     except Exception as e:
         print(f"Error processing dataset {dataset['name']}: {e}")
         continue
-
+display_summary(df)
 print("All datasets processed successfully!")
 
 
