@@ -1,7 +1,7 @@
 # Solar Radiation Analysis Week 0
 
 ## Overview
-The Solar Radiation Analysis Dashboard is an interactive web application built with Streamlit. It provides tools to explore and visualize solar radiation, temperature, and wind data. The dashboard offers features like time-series analysis, correlation matrices, bubble charts, and advanced data cleaning functionalities to help users derive meaningful insights from the data.
+The Solar Radiation Analysis  is an interactive web application built by Abenezer Nigussie. It provides tools to explore and visualize solar radiation, temperature, and wind data. The dashboard offers features like time-series analysis, correlation matrices, bubble charts, and advanced data cleaning functionalities to help users derive meaningful insights from the data.
 
 ---
 
@@ -9,7 +9,7 @@ The Solar Radiation Analysis Dashboard is an interactive web application built w
 - **Data Cleaning**: Handles missing values and removes anomalies from critical variables like solar radiation (`GHI`, `DNI`, `DHI`).
 - **Interactive Visualizations**: Includes time-series plots, correlation matrices, bubble charts, and more.
 - **Data Filtering**: Filter datasets dynamically using a time range slider.
-- **Deployment**: Hosted on Streamlit Community Cloud with CI/CD integration.
+- **Summary**: The summary fo the project that.
 
 ---
 
@@ -24,7 +24,7 @@ The Solar Radiation Analysis Dashboard is an interactive web application built w
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/abenaacs/Solar-Radiation-Analysis-Week-0.git
-   cd solar-radiation-dashboard
+   cd solar-radiation-Analysis-Week-0
 
 
 **Set Up a Virtual Environment**:
@@ -41,6 +41,8 @@ The Solar Radiation Analysis Dashboard is an interactive web application built w
 **Run the App Locally**:
     bash
     ```
+    python scripts/eda.py 
+    # or using the streamlit local dashboard
     streamlit run app/main.py
 
 **Folder Structure**
@@ -56,7 +58,7 @@ The Solar Radiation Analysis Dashboard is an interactive web application built w
     ├── requirements.txt     # Dependencies
     ├── README.md            # Project overview (this file)
 
-**Contact**
+**Contact**:
 Name: Abenezer Nigussie
 Email: abenezernigussiecs@gmail.com
 GitHub: abenaacs
